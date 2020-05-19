@@ -84,6 +84,15 @@ class SinglyLinkedList {
     }
     return current;
   }
+
+  set(value, index) {
+    let node = this.get(index);
+    if (!!node) {
+      node.value = value;
+      return true;
+    }
+    return false;
+  }
 }
 
 const sll = new SinglyLinkedList();
@@ -92,7 +101,8 @@ console.log(sll.push(5));
 console.log(sll.push(6));
 console.log(sll.push(7));
 console.log(sll.push(8));
-console.log(sll.pop());
-console.log(sll.shift());
-console.log(sll.unshift(4));
-console.log(sll.get(3));
+// console.log(sll.pop());
+// console.log(sll.shift());
+// console.log(sll.unshift(4));
+// console.log(sll.get(3));
+console.log(sll.set(1, 4));
