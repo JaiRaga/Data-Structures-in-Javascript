@@ -51,14 +51,12 @@ class SinglyLinkedList {
 
   shift() {
     if (!this.head) return undefined;
-    if (this.head === this.tail) {
-      this.head = null;
-      this.tail = null;
-    } else {
-      this.head = this.head.next;
-    }
 
+    this.head = this.head.next;
     this.length--;
+    if (this.length === 0) {
+      this.tail = null;
+    }
     return this;
   }
 }
