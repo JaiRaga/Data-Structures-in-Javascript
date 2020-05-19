@@ -41,10 +41,21 @@ class SinglyLinkedList {
           this.tail = value;
           break;
         }
-        // console.log(value);
         value = value.next;
-        // console.log(value);
       }
+    }
+
+    this.length--;
+    return this;
+  }
+
+  shift() {
+    if (!this.head) return undefined;
+    if (this.head === this.tail) {
+      this.head = null;
+      this.tail = null;
+    } else {
+      this.head = this.head.next;
     }
 
     this.length--;
@@ -57,4 +68,6 @@ console.log(sll);
 console.log(sll.push(5));
 console.log(sll.push(6));
 console.log(sll.push(7));
+console.log(sll.push(8));
 console.log(sll.pop());
+console.log(sll.shift());
