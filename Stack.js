@@ -27,9 +27,24 @@ class Stack {
     ++this.size;
     return this;
   }
+
+  pop() {
+    if (!this.first) return null;
+
+    let current = this.first;
+    if (this.size === 1) {
+      this.first = null;
+      this.last = null;
+    } else {
+      this.first = this.first.next;
+    }
+    --this.size;
+    return this;
+  }
 }
 
 let stack = new Stack();
 console.log(stack);
 console.log(stack.push(5));
 console.log(stack.push(6));
+console.log(stack.pop());
